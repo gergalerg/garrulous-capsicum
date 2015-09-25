@@ -11,6 +11,6 @@ int main()
 	strcpy(mysocket.sun_path, "localhost");
 	//mysocket.sun_path = ;
 	char *options = "hello";
-	printf("Options = %s", options); 
-	printf("Sizeof mysocket: %lu", sizeof(mysocket));
+	printf("Options = %s\n", options); 
+	printf("Sizeof mysocket: %lu\n", sizeof(mysocket));
 }
