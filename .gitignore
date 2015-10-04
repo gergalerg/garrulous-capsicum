@@ -1,0 +1,7 @@
+/*
+!.gitignore
+!*.c
+!BSTree/
+BSTree/*
+!BSTree/*.c
+!BSTree/*.h
