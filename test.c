@@ -2,7 +2,17 @@
 #include <stdlib.h>
 #include <string.h>
 
+void *func1(int *x) {
 
+    return x;
+}
+void *func2(const int x) {
+
+    return &x;
+}
+
+
+const int X = 4;
 int main()
 {
     /*
@@ -13,9 +23,11 @@ int main()
     getline(&message, &SIZE, stdin);
     printf("Message: %s size: %i", message, (int) sizeof(message));
     */
-    char c;
-    while (c != 't') {
-        c = getchar();
-    }
-    printf("C = %c", (char)c);
+    int *px = malloc(sizeof(int));
+    *px = 3;
+    int *py = malloc(sizeof(int));
+    py = func2(X);
+    int *ci = func2(X);
+    ++*ci;
+    printf("ci= %d", *ci);
 }
