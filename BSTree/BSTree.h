@@ -1,9 +1,13 @@
-#pragma once
+#ifndef _BSTree_h_
+#define _BSTree_h_
 #include <stdio.h>
 #include <stdlib.h>
 
+const void *defaultGetKey(const void *pData);
+
 // obtain a key that corresponds to the data passed into it.
 typedef const void *GetKeyFunc_t(const void *dData);
+
 
 // compoares to keys and returns -1 to 0 to +1 int.
 // Like bsearch() func in c
@@ -22,6 +26,7 @@ typedef struct {
     GetKeyFunc_t *getKey; // Converts data into key value
 } BST_t;
 
+
 // Function prototypes for BSTree.
 // dynamically generates a new object iwth the type BST_t and
 // returns a pointer to it
@@ -31,9 +36,12 @@ BST_t *newBST(CmpFunc_t *cmp, GetKeyFunc_t *getKey);
 // by pData to the node, and inserts the node in the specified tree
 _Bool BST_insert( BST_t *pBST, const void *pData, size_t size);
 
+static _Bool insert(BST_t *pBST, Node_t **ppNade, const void *pData,
+                    size_t size);
+
 // searches the tree and returns pointer to the data item that
 // matches the key reference by the pKey args
-const void *BST_search(BST_t, const void *pKey);
+const void *BST_search(BST_t *, const void *pKey);
 
 // deletes the first node whose data contents matche the key 
 // referenced by  pKey
@@ -52,7 +60,13 @@ int BST_preorder(BST_t *pBST, _Bool(*action)(void *pData));
 
 int BST_postorder(BST_t *pBST,  _Bool (*action)(void *pData));
 
-_Bool tester(int a, int b);
+static const void *search(BST_t *pBST, const Node_t *pNode,
+                        const void *pKey);
 
-_Bool (*funcPtr)(int, int);
+static _Bool erase(BST_t *pBST, Node_t **ppNode, const void *pKey );
 
+static void clear(Node_t *pNode);
+
+static int inorder( Node_t *pNode, _Bool(*action)(void *pData));
+
+#endif // end _BSTree_h_

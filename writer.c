@@ -1,9 +1,25 @@
-#include <unistd.h>
+#include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
+#include <stdbool.h>
 
-int main()
+_Bool isReadable(const char *filename)
 {
-    if ((write(3, "Here is some data\n", 18)) != 18)
-        write(2, "A write error has occured on file desc 3\n", 46);
-    exit(0);
+    FILE *fp = fopen(filename, "r"); //open a file to read/write
+
+    if (fp != NULL)
+    {
+        fclose(fp);
+        return true;
+    }
+    else
+        return false;
+}
+
+int main(int argc, char **argv)
+{
+
+
+    int result  = isReadable(argv[1]);
+    printf("%d\n", (int)result );
 }

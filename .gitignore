@@ -5,3 +5,7 @@
 BSTree/*
 !BSTree/*.c
 !BSTree/*.h
+!ZedShawC/
+ZedShawC/*
+!ZedShawC/*.c
+!ZedShawC/*.h
