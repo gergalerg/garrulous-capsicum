@@ -23,6 +23,7 @@ int main(int argc, char const *argv[])
 {
     // test out the AGE accessors
     log_info("My name: %s, age: %d", MY_NAME, get_age());
+    /*
 
     set_age(100);
 
@@ -41,13 +42,14 @@ int main(int argc, char const *argv[])
     log_info("Ratio at first: %f", update_ratio(2.0));
     log_info("Ratio again: %f", update_ratio(10.0));
     log_info("Ratio once more: %f", update_ratio(300.00));
-
-    // test the scope demo
+    */
+    /* test the scope demo
     int count = 4;
     scope_demo(count);
     scope_demo(count * 20);
 
     log_info("Count after calling scope_demo: %d", count);
+    */
     
     return 0;
 }
