@@ -9,3 +9,6 @@ BSTree/*
 ZedShawC/*
 !ZedShawC/*.c
 !ZedShawC/*.h
+ZedShawC/Ex29/*
+!ZedShawC/Ex29/*.c
+!ZedShawC/Ex29/*.h
